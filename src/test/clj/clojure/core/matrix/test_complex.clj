@@ -3,9 +3,7 @@
   (:require [complex.core :as c]
             [clojure.core.matrix.complex :as cm]
             [clojure.core.matrix :as m]
-            [clojure.math.numeric-tower :as math])
-  (:import (clojure.math.numeric_tower MathFunctions)
-           (org.apache.commons.math3.complex Complex)))
+            [clojure.math.numeric-tower :as math]))
 
 (set! *warn-on-reflection* true)
 (set! *unchecked-math* true)

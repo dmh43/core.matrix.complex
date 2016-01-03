@@ -136,7 +136,7 @@
           imag-trace (m/trace (clojure.core.matrix.complex/imag m))]
       (complex real-trace imag-trace)))
   (determinant [m]
-    "Calculates the determinant of a matrix directly." ;; TODO: Can optimizations be made?
+    "Calculates the determinant of a matrix directly." ;; TODO: Use LU Decomposition
     (if (= 2 (first (m/shape m)))
       (reduce c/-
               (map #(reduce c/* (mp/element-seq %))
@@ -207,7 +207,7 @@
     c/divide2c)
 
   mp/PMatrixEqualityEpsilon
-  (matrix-equals-epsilon
+  (matrix-equals-epsilon ;;TODO too much boxing and unboxing. improve performance
      [a b eps]
     (every?
       identity
